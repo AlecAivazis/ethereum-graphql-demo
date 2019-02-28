@@ -3,7 +3,7 @@ import { Environment, Network, RecordSource, Store } from "relay-runtime";
 // local imports
 import schema from "./schema";
 
-function fetchQuery() {
+function fetchQuery(operation, variables, cacheConfig, uploadables) {
   // ...
 }
 
