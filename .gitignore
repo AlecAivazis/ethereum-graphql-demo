@@ -4,3 +4,5 @@ dist/
 
 *.abi
 *.bin
+
+src/schema.js

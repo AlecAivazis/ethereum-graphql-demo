@@ -4,7 +4,7 @@ import { Environment, Network, RecordSource, Store } from "relay-runtime";
 import schema from "./schema";
 
 function fetchQuery(operation, variables) {
-  return graphql(schema, operation.text, null, null, variables);
+  // ...
 }
 
 export default new Environment({
