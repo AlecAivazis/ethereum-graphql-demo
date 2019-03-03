@@ -11,7 +11,12 @@
   "dependencies": {
     "ganache-cli": "^6.4.0",
     "parcel-bundler": "^1.11.0",
+    "react-dom": "^16.8.3",
     "solc": "^0.5.4",
     "web3": "^1.0.0-beta.46"
+  },
+  "devDependencies": {
+    "react": "^16.8.3",
+    "react-relay": "^3.0.0"
   }
 }
