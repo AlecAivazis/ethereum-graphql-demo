@@ -1,22 +1,9 @@
 const Web3 = require("web3");
 const fs = require("fs");
+const { auctionContract, hubContract } = require("../contracts");
 
 // create our ethereum client
 const web3 = new Web3("http://localhost:8545");
-
-// load the compilation artifacts
-const hubBytecode = fs.readFileSync("contracts_sol_AuctionHub.bin").toString();
-const hubABI = JSON.parse(
-  fs.readFileSync("contracts_sol_AuctionHub.abi").toString()
-);
-const auctionBytecode = fs.readFileSync("contracts_sol_Auction.bin").toString();
-const auctionABI = JSON.parse(
-  fs.readFileSync("contracts_sol_Auction.abi").toString()
-);
-
-// define contract wrappers
-const hubContract = new web3.eth.Contract(hubABI);
-const auctionContract = new web3.eth.Contract(auctionABI);
 
 // create each auction
 Promise.all(

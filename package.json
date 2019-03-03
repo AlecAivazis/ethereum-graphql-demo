@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build:contracts": "npx solcjs --bin --abi contracts.sol",
+    "build:contracts": "npx solcjs --bin --abi -o contracts/ contracts/*.sol",
     "init": "node scripts/init.js",
     "testnet": "ganache-cli"
   },
