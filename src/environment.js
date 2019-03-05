@@ -5,7 +5,7 @@ import { graphql } from 'graphql'
 import schema from "./schema";
 
 function fetchQuery(operation, variables) {
-  return graphql(schema, operation.text, null, null, variables);
+  // ...
 }
 
 export default new Environment({
