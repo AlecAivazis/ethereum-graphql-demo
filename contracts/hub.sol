@@ -4,4 +4,8 @@ pragma solidity ^0.5.0;
 contract AuctionHub {
     // the list of auctions
     address[] public auctions;
+
+    constructor(address[] memory addresses) public {
+        auctions = addresses;
+    }
 }

@@ -1,0 +1,12 @@
+{
+  "presets": [["@babel/preset-env"]],
+  "plugins": [
+    [
+      "babel-plugin-inline-import",
+      {
+        "extensions": [".bin", ".abi"]
+      }
+    ],
+    "@babel/plugin-proposal-export-default-from"
+  ]
+}

@@ -1,40 +1,55 @@
-const Web3 = require("web3");
 const fs = require("fs");
-const { auctionContract, hubContract } = require("../contracts");
+const {
+  auctionABI,
+  hubABI,
+  auctionBytecode,
+  hubBytecode,
+  web3
+} = require("../contracts");
 
-// create our ethereum client
-const web3 = new Web3("http://localhost:8545");
+const ADDRESS = "0xde557d765a64d6bfab9fa3ede3283b077ac43c43"
 
 // create each auction
 Promise.all(
   [...new Array(3)].map(async (_, i) => {
+    console.log("deploying auction", i)
+
     // create an auction
-    const auction = await auctionContract
+    const auction = await new web3.eth.Contract(auctionABI)
       .deploy({
         data: auctionBytecode,
         arguments: [`Auction ${i}`]
       })
       .send({
-        from: "address from above",
+        from: ADDRESS,
         gas: 1400000,
         gasPrice: web3.utils.toWei("0.00002", "ether")
-      });
+      })
 
     // we want a list of each address that we created
     return auction.address;
   })
 ).then(async addresses => {
+  console.log("deploying hub with auction addresses", addresses)
+
   // create a hub with the list of addresses
-  const hub = await hubContract
+  const hub = await new web3.eth.Contract(hubABI)
     .deploy({
-      data: auctionBytecode,
+      data: hubBytecode,
       arguments: [addresses]
     })
     .send({
-      from: "address from above",
+      from: ADDRESS,
       gas: 1400000,
       gasPrice: web3.utils.toWei("0.00002", "ether")
     });
 
   console.log(`Hub deployed at ${hub.address}`);
+
+  process.exit()
+})
+.catch(err => {
+  console.error(err)
+  process.exit()
 });
+

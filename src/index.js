@@ -6,7 +6,7 @@ import environment from "./environment";
 const App = () => (
   <QueryRenderer
     query={graphql`
-      {
+      query srcQuery {
         allAuctions {
           itemName
         }
