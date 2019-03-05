@@ -1,12 +1,16 @@
 {
   "presets": [["@babel/preset-env"]],
   "plugins": [
+    "@babel/plugin-proposal-export-default-from",
+    "babel-plugin-relay",
+    ["@babel/plugin-transform-react-jsx", {
+        "pragmaFrag": "React.Fragment"
+    }],
     [
       "babel-plugin-inline-import",
       {
         "extensions": [".bin", ".abi"]
       }
     ],
-    "@babel/plugin-proposal-export-default-from"
   ]
 }

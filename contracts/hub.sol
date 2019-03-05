@@ -8,4 +8,8 @@ contract AuctionHub {
     constructor(address[] memory addresses) public {
         auctions = addresses;
     }
+
+    function auctionCount() public view returns (uint count) {
+        return auctions.length; 
+    }
 }

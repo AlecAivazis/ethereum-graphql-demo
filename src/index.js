@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
 import { QueryRenderer, graphql } from "react-relay";
+import '@babel/polyfill'
 import environment from "./environment";
 
 const App = () => (
@@ -36,3 +37,6 @@ const App = () => (
     }}
   />
 );
+
+
+ReactDom.render(<App/>, document.getElementById("app"))

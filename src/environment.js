@@ -1,5 +1,6 @@
 // external imports
 import { Environment, Network, RecordSource, Store } from "relay-runtime";
+import { graphql } from 'graphql'
 // local imports
 import schema from "./schema";
 
