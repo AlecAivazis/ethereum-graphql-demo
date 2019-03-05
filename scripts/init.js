@@ -1,7 +1,7 @@
 const fs = require("fs");
 const {
-  auctionABI,
-  hubABI,
+  AuctionABI,
+  HubABI,
   auctionBytecode,
   hubBytecode,
   web3
@@ -15,7 +15,7 @@ Promise.all(
     console.log("deploying auction", i)
 
     // create an auction
-    const auction = await new web3.eth.Contract(auctionABI)
+    const auction = await new web3.eth.Contract(AuctionABI)
       .deploy({
         data: auctionBytecode,
         arguments: [`Auction ${i}`]
@@ -33,7 +33,7 @@ Promise.all(
   console.log("deploying hub with auction addresses", addresses)
 
   // create a hub with the list of addresses
-  const hub = await new web3.eth.Contract(hubABI)
+  const hub = await new web3.eth.Contract(HubABI)
     .deploy({
       data: hubBytecode,
       arguments: [addresses]

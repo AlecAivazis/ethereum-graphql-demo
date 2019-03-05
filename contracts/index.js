@@ -10,5 +10,5 @@ import auctionABISource from "./contracts_auction_sol_Auction.abi";
 // create the instance of web3 we will share everywhere
 export const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
 
-export const hubABI = JSON.parse(hubABISource);
-export const auctionABI = JSON.parse(auctionABISource);
+export const HubABI = JSON.parse(hubABISource);
+export const AuctionABI = JSON.parse(auctionABISource);
