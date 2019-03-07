@@ -7,7 +7,7 @@ const {
   web3
 } = require("../contracts");
 
-const ADDRESS = "0xde557d765a64d6bfab9fa3ede3283b077ac43c43"
+const ADDRESS = "0xa15994ea31e602e2492c3855f92ab57b8716ee21"
 
 // create each auction
 Promise.all(

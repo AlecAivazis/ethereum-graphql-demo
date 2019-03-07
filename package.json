@@ -4,20 +4,21 @@
   "description": "",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build:schema": "babel-node scripts/buildSchema.js",
-    "relay": "relay-compiler --schema schema.json --src src",
     "build:contracts": "npx solcjs --bin --abi -o contracts/ contracts/*.sol",
     "init": "babel-node scripts/init.js",
     "testnet": "ganache-cli"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
+    "apollo-cache-inmemory": "^1.5.1",
+    "apollo-client": "^2.5.1",
+    "apollo-link-core": "^0.5.4",
     "graphql": "^14.1.1",
+    "graphql-tag": "^2.10.1",
     "graphql-tools": "^4.0.4",
     "react": "^16.8.3",
+    "react-apollo": "^2.5.2",
     "react-dom": "^16.8.3",
-    "react-relay": "^3.0.0",
-    "relay-compiler": "^3.0.0",
     "web3": "^1.0.0-beta.48"
   },
   "devDependencies": {
