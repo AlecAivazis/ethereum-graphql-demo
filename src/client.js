@@ -10,11 +10,7 @@ import schema from './schema'
 
 const blockChainLink = new ApolloLink(
     (operation) => new Observable(observer => {
-        graphql(schema, print(operation.query), null, null, operation.variables)
-            .then(result => {
-                observer.next(result)
-                observer.complete()
-            })
+        // ...
     })
         
 )
